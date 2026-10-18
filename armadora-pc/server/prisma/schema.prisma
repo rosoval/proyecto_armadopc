@@ -1,0 +1,31 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Categorías: Procesador, Tarjeta de Video, Placa Madre, RAM, etc.
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  products Product[]
+}
+
+// Componentes informáticos
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String   // Explicación básica de qué hace
+  price       Float    // Precio estimado
+  imageUrl    String?
+  categoryId  Int
+  category    Category @relation(fields: [categoryId], references: [id])
+
+  // Atributos para validar compatibilidad
+  socket      String?  // Ej: "AM4", "LGA1700" (Para CPU y Motherboard)
+  ramType     String?  // Ej: "DDR4", "DDR5" (Para Motherboard y RAM)
+  wattage     Int?     // Consumo en Watts
+}
