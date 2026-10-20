@@ -1,49 +1,229 @@
-.guide-container {
-  max-width: 900px;
+.assembly-guide-container {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2.5rem 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f1f5f9;
+  box-sizing: border-box;
 }
 
-.guide-header {
+.assembly-guide-container h2 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  color: #e2e8f0;
   text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.guide-header h2 {
-  font-size: 2rem;
-  color: #2c3e50;
   margin-bottom: 0.5rem;
 }
 
-.steps-list {
-  display: flex;
-  flex-direction: column;
+.assembly-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* Grilla de Tarjetas */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
+  width: 100%;
 }
 
 .step-card {
-  background: #ffffff;
-  border-left: 5px solid #3498db;
-  border-radius: 8px;
+  background: #121824;
+  border-radius: 16px;
+  border: 1px solid #1e293b;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  background: #161f30;
+  box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.5);
 }
 
 .step-number {
   font-size: 0.85rem;
-  font-weight: bold;
+  font-weight: 700;
+  color: #38bdf8;
   text-transform: uppercase;
-  color: #3498db;
-  letter-spacing: 1px;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
 }
 
 .step-card h3 {
-  margin: 0.3rem 0 0.8rem 0;
-  color: #2c3e50;
+  font-size: 1.15rem;
+  color: #f8fafc;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
 .step-card p {
-  color: #555;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+.card-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #60a5fa;
+}
+
+/* Vista Detallada del Paso */
+.step-detail-container {
+  background: #121824;
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid #1e293b;
+  box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.btn-back {
+  background: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #334155;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+.step-detail-header h2 {
+  font-size: 1.6rem;
+  color: #38bdf8 !important;
+  margin-bottom: 1rem;
+  text-align: left !important;
+}
+
+.step-description {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  background: #1a2234;
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  border-left: 4px solid #3b82f6;
+  margin-bottom: 1.5rem;
+}
+
+/* Contenedor de Medios (Imagen y Video a la par) */
+.media-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .media-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.media-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.media-box h4 {
+  font-size: 0.95rem;
+  color: #f8fafc;
+  margin-bottom: 0.6rem;
+}
+
+.detail-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  background-color: #1a2234;
+}
+
+.video-card-box {
+  background: #1a2234;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  height: 220px;
+  box-sizing: border-box;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.video-card-box p {
+  color: #94a3b8;
+  margin: 0 0 1rem 0;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.btn-youtube {
+  background: #3b82f6;
+  color: #ffffff;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  transition: background 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.btn-youtube:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.tips-box {
+  background: rgba(6, 78, 59, 0.2);
+  border: 1px solid #065f46;
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+.tips-box h4 {
+  color: #34d399;
+  margin-bottom: 0.5rem;
+}
+
+.tips-box ul {
   margin: 0;
+  padding-left: 1.2rem;
+  color: #a7f3d0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.tips-box li {
+  margin-bottom: 0.4rem;
 }

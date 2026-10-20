@@ -1,7 +1,7 @@
 .main-header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e1e8ed;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: #0b0f17; /* Fondo gris muy oscuro / casi negro a juego con el resto */
+  border-bottom: 1px solid #1e293b; /* Borde sutil oscuro */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -21,10 +21,11 @@
 .header-title {
   margin: 0;
   font-size: 1.5rem;
-  color: #2c3e50;
+  color: #f8fafc; /* Texto claro destacado */
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-weight: 700;
 }
 
 .nav-tabs {
@@ -41,18 +42,21 @@
   padding: 0.6rem 1.2rem;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #555;
-  border-radius: 6px;
+  color: #94a3b8; /* Gris suave para los botones inactivos */
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
+  border: 1px solid transparent;
 }
 
 .nav-button:hover {
-  background-color: #f0f4f8;
-  color: #2980b9;
+  background-color: #161f30; /* Fondo oscuro al pasar el cursor */
+  color: #ffffff;
+  border-color: #334155;
 }
 
 .nav-button.active {
-  background-color: #3498db;
+  background-color: #3b82f6; /* Azul brillante moderno para la pestaña activa */
   color: #ffffff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
